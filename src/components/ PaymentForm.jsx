@@ -32,6 +32,10 @@ function PaymentForm() {
 			fetch('https://editor.apphive.io/hook/ccp_jGpT2AJZLWwoLTKiKZbCK5', {
 				method: 'POST',
 				headers: {
+					'Access-Control-Allow-Origin':
+						' https://candid-fairy-a95aac.netlify.app',
+
+					/* 'Access-Control-Allow-Origin': '*', */
 					'Content-Type': 'application/json', // Establece el tipo de contenido como JSON
 				},
 				body: JSON.stringify(payload), // Convierte el objeto en una cadena JSON
