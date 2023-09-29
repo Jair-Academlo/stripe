@@ -33,11 +33,11 @@ function PaymentForm() {
 			callbackDeExito(token.card.id);
 			console.log(callbackDeExito);
 
-			// Crea un objeto que contenga los datos que deseas enviar al webhook
+			/* // Crea un objeto que contenga los datos que deseas enviar al webhook
 			const payload = {
 				token: token.id, // El ID del token
 				// Otros datos relacionados con el pago si es necesario
-			};
+			}; */
 		}
 	};
 
