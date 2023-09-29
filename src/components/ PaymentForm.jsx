@@ -29,7 +29,7 @@ function PaymentForm() {
 			};
 
 			// Realiza una solicitud HTTP POST al webhook
-			fetch('https://webhook.site/7c1c9f3e-5b76-405c-868c-febe89bd5760', {
+			fetch('https://editor.apphive.io/hook/ccp_jGpT2AJZLWwoLTKiKZbCK5', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json', // Establece el tipo de contenido como JSON
