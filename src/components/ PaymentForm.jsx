@@ -4,6 +4,15 @@ function PaymentForm() {
 	const stripe = useStripe();
 	const elements = useElements();
 
+	function callbackDeExito(valorDeLaConstante) {
+		// Construimos la URL a la que queremos redirigir, añadiendo el valor de la constante como parámetro
+		const urlBase = 'https://candid-fairy-a95aac.netlify.app/';
+		const urlConParametro = `${urlBase}?=${valorDeLaConstante}`;
+
+		// Redirigimos a la nueva URL
+		window.location.href = urlConParametro;
+	}
+
 	const handleSubmit = async event => {
 		event.preventDefault();
 
@@ -21,21 +30,25 @@ function PaymentForm() {
 		} else {
 			// Envía el token a tu servidor para procesar el pago
 			console.log(token);
+			callbackDeExito(token.card.id);
+			console.log(callbackDeExito);
 
 			// Crea un objeto que contenga los datos que deseas enviar al webhook
 			const payload = {
 				token: token.id, // El ID del token
 				// Otros datos relacionados con el pago si es necesario
 			};
+		}
+	};
 
-			// Realiza una solicitud HTTP POST al webhook
-			fetch('https://editor.apphive.io/hook/ccp_jGpT2AJZLWwoLTKiKZbCK5', {
+	// Realiza una solicitud HTTP POST al webhook
+	/* fetch('https://editor.apphive.io/hook/ccp_jGpT2AJZLWwoLTKiKZbCK5', {
 				method: 'POST',
 				headers: {
 					'Access-Control-Allow-Origin':
 						' https://candid-fairy-a95aac.netlify.app',
 
-					/* 'Access-Control-Allow-Origin': '*', */
+					'Access-Control-Allow-Origin': '*',
 					'Content-Type': 'application/json', // Establece el tipo de contenido como JSON
 				},
 				body: JSON.stringify(payload), // Convierte el objeto en una cadena JSON
@@ -55,8 +68,7 @@ function PaymentForm() {
 				.catch(error => {
 					console.error('Error al enviar datos al webhook:', error);
 				});
-		}
-	};
+		} */
 
 	return (
 		<form onSubmit={handleSubmit}>
