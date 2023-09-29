@@ -30,7 +30,7 @@ function PaymentForm() {
 		} else {
 			// Envía el token a tu servidor para procesar el pago
 			console.log(token);
-			callbackDeExito(token.card.id);
+			callbackDeExito(token.id);
 			console.log(callbackDeExito);
 
 			/* // Crea un objeto que contenga los datos que deseas enviar al webhook
