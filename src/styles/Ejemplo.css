@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&family=Cormorant+Garamond:wght@300&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 .miContenedorDeTarjeta {
-	width: 350px;
-	/* max-width: 500px;
-	min-width: 350px; */
+	width: 100%;
+	max-width: 500px;
+	min-width: 350px;
 	background-color: white;
 	padding: 20px;
 	color: black;
