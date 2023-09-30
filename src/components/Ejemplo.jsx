@@ -68,7 +68,7 @@ function Ejemplo() {
 						</div>
 					</div>
 				</div>
-				<button type='submit'>Agregar Tarjeta</button>
+				<button type='submit'>Add Card</button>
 			</form>
 		</div>
 	);

@@ -15,7 +15,7 @@ const stripePromisePro = loadStripe(
 function App() {
 	return (
 		<div className='app'>
-			<h1>Añade un metodo de Pago</h1>
+			<h1>Add method payment</h1>
 			<Elements stripe={stripePromisePro}>
 				{/* 	<PaymentForm /> */}
 				{/* <MiTarjeta /> */}
