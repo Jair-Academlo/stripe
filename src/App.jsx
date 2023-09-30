@@ -5,7 +5,7 @@ import './App.css';
 
 // Aquí, deberías acceder al valor de la variable de entorno, no pasar una cadena de texto.
 
-const stripePromiseDev = loadStripe(
+const stripePromise = loadStripe(
 	import.meta.env.VITE_REACT_APP_DEVELOPMENT_KEY
 );
 /* const stripePromisePro = loadStripe(process.env.REACT_APP_PRODUCTION_KEY); */
@@ -14,7 +14,7 @@ function App() {
 	return (
 		<div className='app'>
 			<h1>Add method payment</h1>
-			<Elements stripe={stripePromiseDev}>
+			<Elements stripe={stripePromise}>
 				<Ejemplo />
 			</Elements>
 		</div>
