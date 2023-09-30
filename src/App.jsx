@@ -10,13 +10,13 @@ const stripePromiseDev = loadStripe(
 );
 
 const stripePromisePro = loadStripe(
-	"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"
-
+	'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'
+);
 function App() {
 	return (
 		<div className='app'>
 			<h1>Añade un metodo de Pago</h1>
-			<Elements stripe={stripePromise}>
+			<Elements stripe={stripePromisePro}>
 				{/* 	<PaymentForm /> */}
 				{/* <MiTarjeta /> */}
 				<Ejemplo />
