@@ -3,6 +3,26 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 function PaymentForm() {
 	const stripe = useStripe();
 	const elements = useElements();
+	const estiloCardElement = {
+		base: {
+			iconColor: 'red',
+			color: 'red',
+			fontWeight: '500',
+			fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+			fontSize: '16px',
+			fontSmoothing: 'antialiased',
+			':-webkit-autofill': {
+				color: '#fce883',
+			},
+			'::placeholder': {
+				color: '#87BBFD',
+			},
+		},
+		invalid: {
+			iconColor: '#FFC7EE',
+			color: '#FFC7EE',
+		},
+	};
 
 	function callbackDeExito(valorDeLaConstante) {
 		// Construimos la URL a la que queremos redirigir, añadiendo el valor de la constante como parámetro
@@ -29,52 +49,55 @@ function PaymentForm() {
 			console.error(error);
 		} else {
 			// Envía el token a tu servidor para procesar el pago
-			console.log(token);
-			callbackDeExito(token.id);
-			console.log(callbackDeExito);
 
-			/* // Crea un objeto que contenga los datos que deseas enviar al webhook
-			const payload = {
-				token: token.id, // El ID del token
-				// Otros datos relacionados con el pago si es necesario
-			}; */
+			callbackDeExito(token.id);
 		}
 	};
 
-	// Realiza una solicitud HTTP POST al webhook
-	/* fetch('https://editor.apphive.io/hook/ccp_jGpT2AJZLWwoLTKiKZbCK5', {
-				method: 'POST',
-				headers: {
-					'Access-Control-Allow-Origin':
-						' https://candid-fairy-a95aac.netlify.app',
-
-					'Access-Control-Allow-Origin': '*',
-					'Content-Type': 'application/json', // Establece el tipo de contenido como JSON
-				},
-				body: JSON.stringify(payload), // Convierte el objeto en una cadena JSON
-			})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error(
-							'Hubo un problema al enviar los datos al webhook.'
-						);
-					}
-					return response.json();
-				})
-				.then(data => {
-					// Maneja la respuesta del webhook si es necesario
-					console.log('Respuesta del webhook:', data);
-				})
-				.catch(error => {
-					console.error('Error al enviar datos al webhook:', error);
-				});
-		} */
-
 	return (
-		<form onSubmit={handleSubmit}>
-			<CardElement />
-			<button type='submit'>Pagar</button>
-		</form>
+		<>
+			<div
+				className='miContenedorDeTarjeta'
+				style={{
+					backgroundColor: '#000',
+					padding: '20px',
+					borderRadius: '8px',
+					color: 'red',
+					width: '400px',
+					height: '300px',
+					display: 'inline-grid',
+					alignItems: 'center',
+				}}
+			>
+				<form onSubmit={handleSubmit}>
+					<div
+						style={{
+							padding: '10px',
+							borderBottom: '1px solid white',
+						}}
+					>
+						<label
+							style={{ display: 'block', marginBottom: '10px' }}
+						>
+							Número de Tarjeta
+						</label>
+						<CardElement style={estiloCardElement} />
+					</div>
+					<button
+						type='submit'
+						style={{
+							marginTop: '20px',
+							padding: '10px 20px',
+							borderRadius: '4px',
+							backgroundColor: 'blue',
+							color: 'white',
+						}}
+					>
+						Agregar Tarjeta
+					</button>
+				</form>
+			</div>
+		</>
 	);
 }
 
