@@ -1,77 +1,64 @@
-/* import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
- */ import { useState } from 'react';
-import TarjetaInput from './Tarjeta';
-
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import '../App.css';
+import { useState } from 'react';
 function PaymentForm() {
-	/* const stripe = useStripe();
-	const elements = useElements(); */
-	const [numeroTarjeta, setNumeroTarjeta] = useState('');
+	const [name, setName] = useState('');
 
-	const handleChange = e => {
-		setNumeroTarjeta(e.target.value);
-	};
-	/* const estiloCardElement = {
-		base: {
-			iconColor: 'red',
-			color: 'red',
-			fontWeight: '500',
-			fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-			fontSize: '16px',
-			fontSmoothing: 'antialiased',
-			':-webkit-autofill': {
-				color: '#fce883',
-			},
-			'::placeholder': {
-				color: '#87BBFD',
-			},
-		},
-		invalid: {
-			iconColor: '#FFC7EE',
-			color: '#FFC7EE',
-		},
-	}; */
+	const stripe = useStripe();
+	const elements = useElements();
 
-	/* function callbackDeExito(valorDeLaConstante) {
-		// Construimos la URL a la que queremos redirigir, añadiendo el valor de la constante como parámetro
+	function callbackDeExito(valorDeLaConstante) {
 		const urlBase = 'https://candid-fairy-a95aac.netlify.app/';
 		const urlConParametro = `${urlBase}?=${valorDeLaConstante}`;
 
-		// Redirigimos a la nueva URL
 		window.location.href = urlConParametro;
-	} */
+	}
 
-	/* const handleSubmit = async event => {
+	const handleSubmit = async event => {
 		event.preventDefault();
 
 		if (!stripe || !elements) {
-			// Stripe.js aún no se ha cargado, espera unos segundos o maneja el error de otra manera
 			return;
 		}
 
 		const { token, error } = await stripe.createToken(
-			elements.getElement(CardElement)
+			elements.getElement(CardElement),
+			{ name }
 		);
 
 		if (error) {
 			console.error(error);
+			alert(error.code);
 		} else {
-			// Envía el token a tu servidor para procesar el pago
-
 			callbackDeExito(token.id);
 		}
-	}; */
+	};
 
 	return (
 		<>
-			<form>
-				<TarjetaInput value={numeroTarjeta} onChange={handleChange} />
-			</form>
-			{/* <form id='payment-form' onSubmit={handleSubmit}>
-				<label htmlFor='card'>Card</label>
-				<CardElement id='card' />
+			<form id='payment-form' onSubmit={handleSubmit} className='uu1'>
+				<p className='p'>Card information</p>
+				<div className='card5'>
+					<CardElement />
+				</div>
 
-				<button type='submit'>Agregar Tarjeta</button>
-			</form> */}
+				<div>
+					<div className='name'>
+						<p className='p'>Cardholder name</p>
+						<input
+							className='card2'
+							type='text'
+							placeholder='Full name on card'
+							value={name}
+							onChange={e => setName(e.target.value)}
+						/>
+					</div>
+				</div>
+
+				<button type='submit' className='add'>
+					Add Card
+				</button>
+			</form>
 		</>
 	);
 }

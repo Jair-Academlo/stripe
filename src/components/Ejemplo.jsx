@@ -47,53 +47,55 @@ function Ejemplo() {
 	};
 
 	return (
-		<div className='miContenedorDeTarjeta'>
-			<form onSubmit={handleSubmit}>
-				<div>
+		<>
+			<div className='miContenedorDeTarjeta'>
+				<form onSubmit={handleSubmit}>
 					<div>
-						<p className='p'>Card information</p>
-						<div className='card'>
-							<CardNumberElement />
+						<div>
+							<p className='p'>Card information</p>
+							<div className='card'>
+								<CardNumberElement />
+							</div>
+						</div>
+						<div className='line'>
+							<div className='card3'>
+								<CardExpiryElement />
+							</div>
+							<div className='card4'>
+								<CardCvcElement />
+							</div>
 						</div>
 					</div>
-					<div className='line'>
-						<div className='card3'>
-							<CardExpiryElement />
+					<div>
+						<div className='name'>
+							<p className='p'>Cardholder name</p>
+							<input
+								className='card2'
+								type='text'
+								placeholder='Full name on card'
+								value={name}
+								onChange={e => setName(e.target.value)}
+							/>
 						</div>
-						<div className='card4'>
-							<CardCvcElement />
+					</div>
+					<div>
+						<div className='zip'>
+							<input
+								className='card2'
+								type='text'
+								placeholder='ZIP'
+								value={code}
+								onChange={e => setCode(e.target.value)}
+							/>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div className='name'>
-						<p className='p'>Cardholder name</p>
-						<input
-							className='card2'
-							type='text'
-							placeholder='Full name on card'
-							value={name}
-							onChange={e => setName(e.target.value)}
-						/>
-					</div>
-				</div>
-				<div>
-					<div className='zip'>
-						<input
-							className='card2'
-							type='text'
-							placeholder='ZIP'
-							value={code}
-							onChange={e => setCode(e.target.value)}
-						/>
-					</div>
-				</div>
 
-				<button type='submit' className='add'>
-					Add Card{' '}
-				</button>
-			</form>
-		</div>
+					<button type='submit' className='add'>
+						Add Card{' '}
+					</button>
+				</form>
+			</div>
+		</>
 	);
 }
 

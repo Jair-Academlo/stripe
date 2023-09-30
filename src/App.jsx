@@ -2,6 +2,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import Ejemplo from './components/Ejemplo';
 import './App.css';
+import PaymentForm from './components/ PaymentForm';
 
 // Aquí, deberías acceder al valor de la variable de entorno, no pasar una cadena de texto.
 
@@ -14,7 +15,8 @@ function App() {
 	return (
 		<div className='app'>
 			<Elements stripe={stripePromise}>
-				<Ejemplo />
+				<PaymentForm />
+				{/* <Ejemplo /> */}
 			</Elements>
 		</div>
 	);

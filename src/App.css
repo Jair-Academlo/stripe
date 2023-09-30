@@ -96,3 +96,8 @@ select {
 	border-radius: var(--radius);
 	font-size: 0.7em;
 }
+
+.uu1 {
+	max-width: 500px;
+	min-width: 300px;
+}
