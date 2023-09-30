@@ -5,8 +5,8 @@ import './App.css';
 import MiTarjeta from './components/Prueba';
 import Ejemplo from './components/Ejemplo';
 
-const stripePromiseDev = loadStripe(process.env.REACT_APP_DEVELOPMENT_KEY);
-const stripePromisePro = loadStripe(process.env.REACT_APP_PRODUCTION_KEY);
+const stripePromiseDev = loadStripe('process.env.REACT_APP_DEVELOPMENT_KEY');
+const stripePromisePro = loadStripe('process.env.REACT_APP_PRODUCTION_KEY');
 function App() {
 	return (
 		<div className='app'>
