@@ -1,5 +1,6 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import Ejemplo from './components/Ejemplo';
 import './App.css';
 import PaymentForm from './components/ PaymentForm';
 
@@ -15,6 +16,7 @@ function App() {
 		<div className='app'>
 			<Elements stripe={stripePromise}>
 				<PaymentForm />
+				{/* <Ejemplo /> */}
 			</Elements>
 		</div>
 	);
