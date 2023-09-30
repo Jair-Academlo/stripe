@@ -1,30 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&family=Cormorant+Garamond:wght@300&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 .miContenedorDeTarjeta {
-	background-color: rgba(255, 255, 255, 0.4);
+	width: 350px;
+	/* max-width: 500px;
+	min-width: 350px; */
+	background-color: white;
 	padding: 20px;
 	color: black;
 	border-radius: 8px;
-	border: 1px solid grey;
-	box-shadow: 0.5px 0.5px 0.5px 1px rgba(1, 1, 1, 0.8);
+}
+
+.miContenedorDeTarjeta h2 {
+	margin-bottom: 20px;
+}
+
+.miContenedorDeTarjeta h4 {
+	font-size: medium;
 }
 
 .line {
 	width: 100%;
-	gap: 20px;
 	display: inline-flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	margin: auto;
+}
+
+.expiration {
+	width: 45%;
 }
 
 .cvc {
-	width: 40%;
+	width: 45%;
 }
 
+.p {
+	margin: 0;
+	margin-left: 3px;
+	font-size: 0.8em;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.8);
+	font-family: 'Roboto';
+	letter-spacing: 0.5px;
+}
 .card {
+	margin: 0 auto;
 	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.4);
-	border-radius: 10px;
-	border: 1px solid black;
+	background-color: white;
+	border: 0.5px solid #dcdcdc;
+	border-radius: 5px 5px 0 0;
 }
 
-input.__PrivateStripeElement-input {
-	color: green;
+.card2 {
+	padding: 10px;
+	background-color: white;
+	border: 0.5px solid #dcdcdc;
+	border-radius: 10px;
+	font-size: 0.8em;
+	width: 100%;
+}
+.card3 {
+	padding: 10px;
+	background-color: white;
+	border-bottom: 0.5px solid #dcdcdc;
+	border-left: 0.5px solid #dcdcdc;
+	border-right: 0.5px solid #dcdcdc;
+	font-size: 0.8em;
+	width: 100%;
+	border-radius: 0 0 0 5px;
+}
+
+.card4 {
+	padding: 10px;
+	background-color: white;
+	border-bottom: 0.5px solid #dcdcdc;
+	border-left: 0.5px solid #dcdcdc;
+	border-right: 0.5px solid #dcdcdc;
+	font-size: 0.8em;
+	width: 100%;
+	border-radius: 0 0 5px 0;
+}
+.add {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	border-radius: 10px;
+	margin: 20px auto;
+	width: 100%;
+	background-color: rgb(0, 116, 212);
+}
+
+.a {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.name {
+	width: 94%;
+}
+.zip {
+	width: 94%;
 }
