@@ -5,13 +5,9 @@ import './App.css';
 import MiTarjeta from './components/Prueba';
 import Ejemplo from './components/Ejemplo';
 
-const stripePromiseDev = loadStripe(
-	'pk_test_51NqbCjE2i202Okp0cokZjItpc9YZ6y6BOm1TVCvPd74rW408etPgmJBVTYoK9QStzmGkahBsJctCXYQVLD9dFtiM006XAOVzfP'
-);
+const stripePromiseDev = loadStripe('DEVELOPMENT_KEY');
 
-const stripePromisePro = loadStripe(
-	'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'
-);
+const stripePromisePro = loadStripe('PRODUCTION_KEY');
 function App() {
 	return (
 		<div className='app'>
