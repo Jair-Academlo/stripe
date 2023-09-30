@@ -27,8 +27,7 @@ function PaymentForm() {
 		);
 
 		if (error) {
-			console.error(error);
-			alert(error.code);
+			alert(error.message);
 		} else {
 			callbackDeExito(token.id);
 		}
