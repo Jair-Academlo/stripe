@@ -13,7 +13,6 @@ const stripePromise = loadStripe(
 function App() {
 	return (
 		<div className='app'>
-			<h1>Add method payment</h1>
 			<Elements stripe={stripePromise}>
 				<Ejemplo />
 			</Elements>
