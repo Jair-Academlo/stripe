@@ -12,7 +12,7 @@ function App() {
 	return (
 		<div className='app'>
 			<h1>Add method payment</h1>
-			<Elements stripe={stripePromisePro}>
+			<Elements stripe={stripePromiseDev}>
 				{/* 	<PaymentForm /> */}
 				{/* <MiTarjeta /> */}
 				<Ejemplo />
