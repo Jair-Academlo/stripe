@@ -1,31 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
-:root {
-	--light-grey: #f6f9fc;
-	--dark-terminal-color: #0a2540;
-	--accent-color: #635bff;
-	--radius: 3px;
-}
-
-body {
-	padding: 20px;
-	font-family: 'Raleway';
-	display: flex;
-	justify-content: center;
-	font-size: 1.2em;
-	color: var(--dark-terminal-color);
-}
-
-main {
-	width: 480px;
-}
-
 form > * {
 	margin: 10px 0;
-}
-
-button {
-	background-color: var(--accent-color);
 }
 
 button {
@@ -89,6 +65,10 @@ select {
 }
 
 .uu1 {
-	max-width: 500px;
-	min-width: 300px;
+	width: 100%;
+	display: contents;
+}
+
+.app {
+	width: 100%;
 }
